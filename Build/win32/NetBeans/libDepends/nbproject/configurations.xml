@@ -62,7 +62,7 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../../../../Contrib/boost_include</pElem>
+            <pElem>../../../../Contrib/boost_1_45_0</pElem>
             <pElem>../../../../Contrib/threadpool</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
@@ -102,9 +102,8 @@
         <ccTool>
           <developmentMode>6</developmentMode>
           <incDir>
-            <pElem>../../../../Contrib/boost_include</pElem>
+            <pElem>../../../../Contrib/boost_1_45_0</pElem>
             <pElem>../../../../Contrib/threadpool</pElem>
-            <pElem>../../../../src</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>

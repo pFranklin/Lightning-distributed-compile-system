@@ -46,7 +46,7 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../../../../Contrib/boost_include</pElem>
+            <pElem>../../../../Contrib/boost_1_45_0</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>
           <warningLevel>2</warningLevel>
@@ -69,7 +69,7 @@
         <ccTool>
           <developmentMode>6</developmentMode>
           <incDir>
-            <pElem>../../../../Contrib/boost_include</pElem>
+            <pElem>../../../../Contrib/boost_1_45_0</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>
           <warningLevel>2</warningLevel>
