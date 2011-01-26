@@ -68,32 +68,32 @@ LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_filesystem -lboost_
 ${OBJECTDIR}/_ext/1152467571/cDepends_C_Regex.o: ../../../../src/libDepends/cDepends_C_Regex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1152467571
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDepends_C_Regex.o ../../../../src/libDepends/cDepends_C_Regex.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_include -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDepends_C_Regex.o ../../../../src/libDepends/cDepends_C_Regex.cpp
 
 ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o: ../../../../src/common/BFS_UTF8_CODE.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/438060982
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_include -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
 
 ${OBJECTDIR}/_ext/438060982/cUnicodeConvert.o: ../../../../src/common/cUnicodeConvert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/438060982
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/cUnicodeConvert.o ../../../../src/common/cUnicodeConvert.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_include -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/cUnicodeConvert.o ../../../../src/common/cUnicodeConvert.cpp
 
 ${OBJECTDIR}/_ext/1152467571/cDepends.o: ../../../../src/libDepends/cDepends.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1152467571
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDepends.o ../../../../src/libDepends/cDepends.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_include -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDepends.o ../../../../src/libDepends/cDepends.cpp
 
 ${OBJECTDIR}/_ext/1152467571/cDependsFactory.o: ../../../../src/libDepends/cDependsFactory.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1152467571
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDependsFactory.o ../../../../src/libDepends/cDependsFactory.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_include -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDependsFactory.o ../../../../src/libDepends/cDependsFactory.cpp
 
 ${OBJECTDIR}/_ext/1152467571/cDepends_C.o: ../../../../src/libDepends/cDepends_C.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1152467571
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDepends_C.o ../../../../src/libDepends/cDepends_C.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_include -I../../../../Contrib/threadpool -I../../../../src  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1152467571/cDepends_C.o ../../../../src/libDepends/cDepends_C.cpp
 
 # Subprojects
 .build-subprojects:

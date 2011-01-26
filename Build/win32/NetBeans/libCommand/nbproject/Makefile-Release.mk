@@ -65,17 +65,17 @@ LDLIBSOPTIONS=
 ${OBJECTDIR}/_ext/1756224175/cCommandFactory.o: ../../../../src/libCommand/cCommandFactory.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1756224175
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1756224175/cCommandFactory.o ../../../../src/libCommand/cCommandFactory.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_include  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1756224175/cCommandFactory.o ../../../../src/libCommand/cCommandFactory.cpp
 
 ${OBJECTDIR}/_ext/1756224175/cCommand_nv_cg.o: ../../../../src/libCommand/cCommand_nv_cg.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1756224175
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1756224175/cCommand_nv_cg.o ../../../../src/libCommand/cCommand_nv_cg.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_include  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1756224175/cCommand_nv_cg.o ../../../../src/libCommand/cCommand_nv_cg.cpp
 
 ${OBJECTDIR}/_ext/1756224175/cCommand.o: ../../../../src/libCommand/cCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1756224175
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1756224175/cCommand.o ../../../../src/libCommand/cCommand.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_include  -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1756224175/cCommand.o ../../../../src/libCommand/cCommand.cpp
 
 # Subprojects
 .build-subprojects:
