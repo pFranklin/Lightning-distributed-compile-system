@@ -33,7 +33,8 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/342587783/main.o
+	${OBJECTDIR}/_ext/342587783/main.o \
+	${OBJECTDIR}/_ext/342587783/cProject.o
 
 
 # C Compiler Flags
@@ -64,6 +65,11 @@ ${OBJECTDIR}/_ext/342587783/main.o: ../../../../src/AgentCore/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/main.o ../../../../src/AgentCore/main.cpp
+
+${OBJECTDIR}/_ext/342587783/cProject.o: ../../../../src/AgentCore/cProject.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cProject.o ../../../../src/AgentCore/cProject.cpp
 
 # Subprojects
 .build-subprojects:

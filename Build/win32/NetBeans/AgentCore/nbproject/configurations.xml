@@ -5,11 +5,13 @@
                    displayName="头文件"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>../../../../src/AgentCore/cProject.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="源文件"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>../../../../src/AgentCore/cProject.cpp</itemPath>
       <itemPath>../../../../src/AgentCore/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
