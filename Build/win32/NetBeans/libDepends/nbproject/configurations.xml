@@ -83,8 +83,8 @@
             <linkerLibLibItem>boost_system</linkerLibLibItem>
             <linkerLibLibItem>boost_thread</linkerLibLibItem>
             <linkerLibLibItem>boost_wave</linkerLibLibItem>
-            <linkerLibLibItem>icuuc45.dll</linkerLibLibItem>
-            <linkerLibLibItem>icui18n45.dll</linkerLibLibItem>
+            <linkerLibLibItem>icuuc45</linkerLibLibItem>
+            <linkerLibLibItem>icui18n45</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -130,8 +130,8 @@
             <linkerLibLibItem>boost_system</linkerLibLibItem>
             <linkerLibLibItem>boost_thread</linkerLibLibItem>
             <linkerLibLibItem>boost_wave</linkerLibLibItem>
-            <linkerLibLibItem>icuuc45.dll</linkerLibLibItem>
-            <linkerLibLibItem>icui18n45.dll</linkerLibLibItem>
+            <linkerLibLibItem>icuuc45</linkerLibLibItem>
+            <linkerLibLibItem>icui18n45</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

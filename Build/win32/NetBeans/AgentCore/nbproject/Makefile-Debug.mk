@@ -51,7 +51,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost
+LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_serialization
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

@@ -53,6 +53,9 @@
           <linkerAddLib>
             <pElem>../../../../Contrib/LIBS/win32/boost</pElem>
           </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
+          </linkerLibItems>
         </linkerTool>
       </compileType>
     </conf>
@@ -87,6 +90,9 @@
             <pElem>../../../../Contrib/LIBS/win32/boost</pElem>
           </linkerAddLib>
           <stripSymbols>true</stripSymbols>
+          <linkerLibItems>
+            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
+          </linkerLibItems>
         </linkerTool>
       </compileType>
     </conf>

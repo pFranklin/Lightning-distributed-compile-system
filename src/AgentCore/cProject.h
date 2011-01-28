@@ -1,8 +1,8 @@
 #ifndef cProject_h
 #define cProject_h
 
-#include <string>
-#include <vector>
+#include <boost/serialization/string.hpp>
+#include <boost/serialization/vector.hpp>
 
 /* sSrcInfo
  * Building system one source file options.
@@ -13,7 +13,7 @@
 
 struct sSrcInfo {
     /** Source file name. */
-    std::string m_SrcFileName;
+    std::vector<std::string> m_SrcFileName;
 
     /** All output file names. */
     std::vector<std::string> m_OutFileName;
@@ -50,6 +50,12 @@ struct sSrcInfo {
     : m_AppendMacro(false)
     , m_AppendInclude(false) {
     }
+
+private:
+    friend class boost::serialization::access;
+
+    template<class Archive>
+    void serialize(Archive & ar, const unsigned int version);
 };
 
 /* cProject
@@ -68,6 +74,21 @@ public:
     /** Virtual destructor to cleanup subclasses properly.  */
     virtual ~cProject();
 
+    /** Reset all members. */
+    void Reset();
+
+    /** Input the project file. */
+    void InputProject(const char *projectFile);
+
+    /** Output the project file. */
+    void OutPutProject(const char *projectFile);
+
+    /** Input the project by using iostream. */
+    void InputProject(std::istream &is_);
+
+    /** Output the project by using iostream. */
+    void OutPutProject(std::ostream &os_);
+
 protected:
     /** Global macro.  */
     std::vector<std::string> m_GlobalMacro;
@@ -81,6 +102,12 @@ protected:
 private:
     cProject(cProject const&); // Purposely not implemented.
     void operator=(cProject const&); // Purposely not implemented.
+
+private:
+    friend class boost::serialization::access;
+
+    template<class Archive>
+    void serialize(Archive & ar, const unsigned int version);
 };
 
 #endif

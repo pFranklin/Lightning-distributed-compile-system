@@ -55,7 +55,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_filesystem -lboost_regex -lboost_system -lboost_thread -lboost_wave -licuuc45.dll -licui18n45.dll
+LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_filesystem -lboost_regex -lboost_system -lboost_thread -lboost_wave -licuuc45 -licui18n45
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
