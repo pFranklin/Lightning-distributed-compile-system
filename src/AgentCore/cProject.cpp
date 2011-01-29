@@ -7,6 +7,13 @@
 
 //----------------------------------------------------------------------------
 
+sSrcInfo::sSrcInfo()
+: m_AppendMacro(false)
+, m_AppendInclude(false) {
+}
+
+//----------------------------------------------------------------------------
+
 template<class Archive>
 void sSrcInfo::serialize(Archive & ar, const unsigned int version) {
     ar & m_SrcFileName;
@@ -50,9 +57,9 @@ void cProject::InputProject(const char *projectFile) {
 
 //----------------------------------------------------------------------------
 
-void cProject::OutPutProject(const char *projectFile) {
+void cProject::OutputProject(const char *projectFile) {
     std::ofstream ofs(projectFile);
-    OutPutProject(ofs);
+    OutputProject(ofs);
 }
 
 //----------------------------------------------------------------------------
@@ -65,11 +72,36 @@ void cProject::InputProject(std::istream &is_) {
 
 //----------------------------------------------------------------------------
 
-void cProject::OutPutProject(std::ostream &os_) {
+void cProject::OutputProject(std::ostream &os_) {
     boost::archive::binary_oarchive oa(os_);
     oa << (*this);
 }
 
+//----------------------------------------------------------------------------
+
+void cProject::AddGlobalMacro(std::string &macro) {
+    m_GlobalMacro.push_back(macro);
+}
+
+//----------------------------------------------------------------------------
+
+void cProject::AddGlobalInclude(std::string &includePath) {
+    m_GlobalInclude.push_back(includePath);
+}
+
+//----------------------------------------------------------------------------
+
+void cProject::AddSourceFile(sSrcInfo &sourceFile) {
+    m_AllSrcInfo.push_back(sourceFile);
+}
+
+//----------------------------------------------------------------------------
+
+void cProject::SetSourceFile(unsigned int index, sSrcInfo &sourceFile) {
+    std::list<sSrcInfo>::iterator itor = m_AllSrcInfo.begin();
+    std::advance(itor, index);
+    m_AllSrcInfo.insert(itor, sourceFile);
+}
 
 //----------------------------------------------------------------------------
 

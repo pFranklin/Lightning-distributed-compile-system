@@ -3,6 +3,7 @@
 
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/vector.hpp>
+#include <boost/serialization/list.hpp>
 
 /* sSrcInfo
  * Building system one source file options.
@@ -13,7 +14,7 @@
 
 struct sSrcInfo {
     /** Source file name. */
-    std::vector<std::string> m_SrcFileName;
+    std::string m_SrcFileName;
 
     /** All output file names. */
     std::vector<std::string> m_OutFileName;
@@ -46,10 +47,7 @@ struct sSrcInfo {
     bool m_AppendInclude;
 
     /** Constructor of the struct. */
-    sSrcInfo()
-    : m_AppendMacro(false)
-    , m_AppendInclude(false) {
-    }
+    sSrcInfo();
 
 private:
     friend class boost::serialization::access;
@@ -81,13 +79,25 @@ public:
     void InputProject(const char *projectFile);
 
     /** Output the project file. */
-    void OutPutProject(const char *projectFile);
+    void OutputProject(const char *projectFile);
 
     /** Input the project by using iostream. */
     void InputProject(std::istream &is_);
 
     /** Output the project by using iostream. */
-    void OutPutProject(std::ostream &os_);
+    void OutputProject(std::ostream &os_);
+
+    /** Add global macro. */
+    void AddGlobalMacro(std::string &macro);
+
+    /** Add global global include. */
+    void AddGlobalInclude(std::string &includePath);
+
+    /** Add one source file. */
+    void AddSourceFile(sSrcInfo &sourceFile);
+
+    /** Set source file. */
+    void SetSourceFile(unsigned int index, sSrcInfo &sourceFile);
 
 protected:
     /** Global macro.  */
@@ -97,7 +107,7 @@ protected:
     std::vector<std::string> m_GlobalInclude;
 
     /** All source files information.  */
-    std::vector<sSrcInfo> m_AllSrcInfo;
+    std::list<sSrcInfo> m_AllSrcInfo;
 
 private:
     cProject(cProject const&); // Purposely not implemented.
