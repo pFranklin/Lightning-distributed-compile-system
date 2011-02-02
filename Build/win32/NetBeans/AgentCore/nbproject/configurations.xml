@@ -5,12 +5,20 @@
                    displayName="头文件"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="Common"
+                     projectFiles="true"
+                     kind="SOURCE_LOGICAL_FOLDER">
+        <itemPath>../../../../src/common/ioSerialize.h</itemPath>
+      </logicalFolder>
+      <itemPath>../../../../src/AgentCore/cCache.h</itemPath>
       <itemPath>../../../../src/AgentCore/cProject.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="源文件"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>../../../../src/AgentCore/cCache.cpp</itemPath>
       <itemPath>../../../../src/AgentCore/cProject.cpp</itemPath>
       <itemPath>../../../../src/AgentCore/main.cpp</itemPath>
     </logicalFolder>
