@@ -7,8 +7,6 @@ int main(int argc, char **argv) {
     p.AddGlobalMacro("base");
     ioSerialize::Output(p, "f:/t.t");
 
-
-
     return 1;
 
 }
