@@ -53,7 +53,19 @@ private:
     friend class boost::serialization::access;
 
     template<class Archive>
-    void serialize(Archive & ar, const unsigned int version);
+    void serialize(Archive & ar, const unsigned int version) {
+        ar & m_SrcFileName;
+        ar & m_OutFileName;
+        ar & m_EntryName;
+        ar & m_Options;
+        ar & m_DependsCheckName;
+        ar & m_Compiler;
+        ar & m_CompilerCommand;
+        ar & m_Macro;
+        ar & m_AppendMacro;
+        ar & m_Include;
+        ar & m_AppendInclude;
+    }
 };
 
 /* cProject
@@ -75,23 +87,17 @@ public:
     /** Reset all members. */
     void Reset();
 
-    /** Input the project file. */
-    void InputProject(const char *projectFile);
-
-    /** Output the project file. */
-    void OutputProject(const char *projectFile);
-
-    /** Input the project by using iostream. */
-    void InputProject(std::istream &is_);
-
-    /** Output the project by using iostream. */
-    void OutputProject(std::ostream &os_);
-
     /** Add global macro. */
     void AddGlobalMacro(std::string &macro);
 
     /** Add global global include. */
     void AddGlobalInclude(std::string &includePath);
+
+    /** Add global macro by using const char*. */
+    void AddGlobalMacro(const char *macro);
+
+    /** Add global global include by using const char*. */
+    void AddGlobalInclude(const char *includePath);
 
     /** Add one source file. */
     void AddSourceFile(sSrcInfo &sourceFile);
@@ -117,7 +123,11 @@ private:
     friend class boost::serialization::access;
 
     template<class Archive>
-    void serialize(Archive & ar, const unsigned int version);
+    void serialize(Archive & ar, const unsigned int version) {
+        ar & m_GlobalMacro;
+        ar & m_GlobalInclude;
+        ar & m_AllSrcInfo;
+    }
 };
 
 #endif
