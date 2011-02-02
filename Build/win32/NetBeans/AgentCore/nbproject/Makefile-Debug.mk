@@ -34,6 +34,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/342587783/main.o \
+	${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o \
 	${OBJECTDIR}/_ext/342587783/cCache.o \
 	${OBJECTDIR}/_ext/342587783/cProject.o
 
@@ -52,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_serialization
+LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_serialization -lboost_filesystem -lboost_system
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -66,6 +67,11 @@ ${OBJECTDIR}/_ext/342587783/main.o: ../../../../src/AgentCore/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/main.o ../../../../src/AgentCore/main.cpp
+
+${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o: ../../../../src/common/BFS_UTF8_CODE.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/438060982
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
 
 ${OBJECTDIR}/_ext/342587783/cCache.o: ../../../../src/AgentCore/cCache.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/342587783

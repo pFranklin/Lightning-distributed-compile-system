@@ -1,3 +1,16 @@
+/*============================================================================
+  Lightning - Cross Platform Distributed Building System
+  Copyright 2010-2011 Paul Franklin
+
+  Distributed under the GNU General Public License v2.0 License or later;
+  see accompanying file license for details.
+
+  This software is distributed WITHOUT ANY WARRANTY; without even the
+  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the License for more information.
+============================================================================*/
+
+
 #ifndef iDepends_h
 #define iDepends_h
 
@@ -16,11 +29,14 @@
 struct sDependsInfo {
     /** File abs path.  */
     const char *FileAbsPath;
+
     /** File relative path which will be contained in
      *  tar file stream, can include './' or '../' .  */
     const char *FileRelativePath;
+
     /** File data for preprocessed file stream.  */
     const char *FileData;
+
     /** File data size.  */
     uint32_t FileSize;
 

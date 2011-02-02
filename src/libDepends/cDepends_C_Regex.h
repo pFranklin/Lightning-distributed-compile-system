@@ -1,3 +1,16 @@
+/*============================================================================
+  Lightning - Cross Platform Distributed Building System
+  Copyright 2010-2011 Paul Franklin
+
+  Distributed under the GNU General Public License v2.0 License or later;
+  see accompanying file license for details.
+
+  This software is distributed WITHOUT ANY WARRANTY; without even the
+  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the License for more information.
+============================================================================*/
+
+
 #ifndef cDepends_C_Fast_h
 #define cDepends_C_Fast_h
 
@@ -100,6 +113,7 @@ protected:
 private:
     /** File leafs read write mutex.  */
     boost::mutex m_LeafsMutex;
+
     /** Add depends file mutex.  */
     boost::mutex m_AddDependsMutex;
 };

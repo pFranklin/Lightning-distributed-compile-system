@@ -1,3 +1,16 @@
+/*============================================================================
+  Lightning - Cross Platform Distributed Building System
+  Copyright 2010-2011 Paul Franklin
+
+  Distributed under the GNU General Public License v2.0 License or later;
+  see accompanying file license for details.
+
+  This software is distributed WITHOUT ANY WARRANTY; without even the
+  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the License for more information.
+============================================================================*/
+
+
 #include <fstream>
 #include <unicode/ucsdet.h>
 #include <unicode/unistr.h>
@@ -60,8 +73,8 @@ int32_t cUnicodeConvert::Convert(const char *sourceFile, const char *codepage) {
             infile.unsetf(std::ios::skipws);
             std::string codepageData;
             codepageData.assign(
-                std::istreambuf_iterator<char>(infile.rdbuf()),
-                std::istreambuf_iterator<char>());
+                    std::istreambuf_iterator<char>(infile.rdbuf()),
+                    std::istreambuf_iterator<char>());
             ret = Convert(codepageData.c_str(), codepageData.size(), codepage);
         } catch (...) {
         }
@@ -80,8 +93,8 @@ int32_t cUnicodeConvert::Convert(const char *sourceFile) {
             infile.unsetf(std::ios::skipws);
             std::string codepageData;
             codepageData.assign(
-                std::istreambuf_iterator<char>(infile.rdbuf()),
-                std::istreambuf_iterator<char>());
+                    std::istreambuf_iterator<char>(infile.rdbuf()),
+                    std::istreambuf_iterator<char>());
             std::string codepage = getCodePageFromData(codepageData.c_str(), codepageData.size());
             ret = Convert(codepageData.c_str(), codepageData.size(), codepage.c_str());
         } catch (...) {

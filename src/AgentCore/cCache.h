@@ -1,3 +1,16 @@
+/*============================================================================
+  Lightning - Cross Platform Distributed Building System
+  Copyright 2010-2011 Paul Franklin
+
+  Distributed under the GNU General Public License v2.0 License or later;
+  see accompanying file license for details.
+
+  This software is distributed WITHOUT ANY WARRANTY; without even the
+  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the License for more information.
+============================================================================*/
+
+
 #ifndef cCache_h
 #define cCache_h
 
@@ -24,7 +37,13 @@ public:
     virtual ~cCache();
 
     /** Reset all members. */
-    virtual void Reset();
+    void Reset();
+
+    /** Check the source file which should be recompiled or not. */
+    bool CheckFile();
+
+    /** Check compile option. */
+    bool CheckOption();
 
 protected:
     /** Source file name. */
@@ -35,6 +54,9 @@ protected:
 
     /** Depneds filef name. */
     std::map<std::string, std::time_t> m_DependsInfo;
+
+    /** Compile options. */
+    std::string m_Options;
 
     /** Options crc. */
     unsigned int m_OptionsCrc;
@@ -47,6 +69,7 @@ private:
         ar & m_SourceFileName;
         ar & m_SrcLastWriteTime;
         ar & m_DependsInfo;
+        ar & m_Options;
         ar & m_OptionsCrc;
     }
 };
