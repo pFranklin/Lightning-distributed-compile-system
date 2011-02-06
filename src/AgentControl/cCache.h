@@ -43,7 +43,7 @@ public:
     bool CheckFile();
 
     /** Check compile option. */
-    bool CheckOption();
+    bool CheckOption(std::string &option);
 
 protected:
     /** Source file name. */
@@ -54,9 +54,6 @@ protected:
 
     /** Depneds filef name. */
     std::map<std::string, std::time_t> m_DependsInfo;
-
-    /** Compile options. */
-    std::string m_Options;
 
     /** Options crc. */
     unsigned int m_OptionsCrc;
@@ -69,7 +66,6 @@ private:
         ar & m_SourceFileName;
         ar & m_SrcLastWriteTime;
         ar & m_DependsInfo;
-        ar & m_Options;
         ar & m_OptionsCrc;
     }
 };

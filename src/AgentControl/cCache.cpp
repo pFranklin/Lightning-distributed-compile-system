@@ -17,6 +17,7 @@
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/crc.hpp>
+#include <glog/logging.h>
 
 #include "common/BFS_UTF8_CODE.h"
 #include "cCache.h"
@@ -65,7 +66,7 @@ bool cCache::CheckFile() {
     } catch (bool b) {
         bOK = b;
     } catch (boost::filesystem3::filesystem_error &error) {
-        std::cerr << error.what();
+        LOG(INFO) << error.what();
         bOK = true;
     }
 
@@ -74,8 +75,8 @@ bool cCache::CheckFile() {
 
 //----------------------------------------------------------------------------
 
-bool cCache::CheckOption() {
+bool cCache::CheckOption(std::string &option) {
     boost::crc_32_type result;
-    result.process_bytes(m_Options.data(), m_Options.size());
+    result.process_bytes(option.data(), option.size());
     return m_OptionsCrc == result.checksum();
 }

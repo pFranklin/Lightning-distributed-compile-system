@@ -12,18 +12,22 @@
 
 
 #include <cstdio>
+#include <stdlib.h>
+#include <glog/logging.h>
 #include "cProject.h"
 #include "common/ioSerialize.h"
 
+
 int main(int argc, char **argv) {
-    cProject p;
-    sSrcInfo sourceFile;
-    sourceFile.m_SrcFileName = "123123123";
-    sourceFile.m_Macro.push_back("abcdef");
-    sourceFile.m_Macro.push_back("ddddef");
-    p.AddGlobalMacro("base");
-    p.AddSourceFile(sourceFile);
-    ioSerialize::Output(p, "f:/t.t");
+
+
+    // Initialize Google's logging library.
+    google::InitGoogleLogging(argv[0]);
+    google::ParseCommandLineFlags(&argc, &argv, false);
+
+    // ...
+    LOG(INFO) << "Found " << 3 << " cookies";
+
 
     return 1;
 
