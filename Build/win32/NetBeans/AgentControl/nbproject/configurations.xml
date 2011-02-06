@@ -6,7 +6,7 @@
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
       <logicalFolder name="f1"
-                     displayName="Common"
+                     displayName="common"
                      projectFiles="true"
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.h</itemPath>
@@ -15,12 +15,17 @@
       <itemPath>../../../../src/AgentCore/cCache.h</itemPath>
       <itemPath>../../../../src/AgentCore/cProject.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true"
+                   kind="SOURCE_LOGICAL_FOLDER">
+    </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
       <logicalFolder name="f1"
-                     displayName="Common"
+                     displayName="common"
                      projectFiles="true"
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.cpp</itemPath>
@@ -28,11 +33,6 @@
       <itemPath>../../../../src/AgentCore/cCache.cpp</itemPath>
       <itemPath>../../../../src/AgentCore/cProject.cpp</itemPath>
       <itemPath>../../../../src/AgentCore/main.cpp</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ResourceFiles"
-                   displayName="Resource Files"
-                   projectFiles="true"
-                   kind="SOURCE_LOGICAL_FOLDER">
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -58,6 +58,8 @@
         <ccTool>
           <incDir>
             <pElem>../../../../Contrib/boost_1_45_0</pElem>
+            <pElem>../../../../Contrib/gflags</pElem>
+            <pElem>../../../../Contrib/glog</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>
@@ -67,11 +69,15 @@
           <output>../../../../Bin/win32/AgentCore</output>
           <linkerAddLib>
             <pElem>../../../../Contrib/LIBS/win32/boost</pElem>
+            <pElem>../../../../Contrib/LIBS/win32/gflags</pElem>
+            <pElem>../../../../Contrib/LIBS/win32/glog</pElem>
           </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
             <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>gflags</linkerLibLibItem>
+            <linkerLibLibItem>glog</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -90,6 +96,7 @@
           <developmentMode>6</developmentMode>
           <incDir>
             <pElem>../../../../Contrib/boost_1_45_0</pElem>
+            <pElem>../../../../Contrib/glog</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>
@@ -105,12 +112,16 @@
           <output>../../../../Bin/win32/AgentCore</output>
           <linkerAddLib>
             <pElem>../../../../Contrib/LIBS/win32/boost</pElem>
+            <pElem>../../../../Contrib/LIBS/win32/gflags</pElem>
+            <pElem>../../../../Contrib/LIBS/win32/glog</pElem>
           </linkerAddLib>
           <stripSymbols>true</stripSymbols>
           <linkerLibItems>
-            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
             <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>gflags</linkerLibLibItem>
+            <linkerLibLibItem>glog</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

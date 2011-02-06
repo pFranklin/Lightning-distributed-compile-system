@@ -53,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_serialization -lboost_filesystem -lboost_system
+LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -L../../../../Contrib/LIBS/win32/gflags -L../../../../Contrib/LIBS/win32/glog -lboost_filesystem -lboost_serialization -lboost_system -lgflags -lglog
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -66,22 +66,22 @@ LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -lboost_serialization -lboo
 ${OBJECTDIR}/_ext/342587783/main.o: ../../../../src/AgentCore/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/main.o ../../../../src/AgentCore/main.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/main.o ../../../../src/AgentCore/main.cpp
 
 ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o: ../../../../src/common/BFS_UTF8_CODE.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/438060982
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
 
 ${OBJECTDIR}/_ext/342587783/cCache.o: ../../../../src/AgentCore/cCache.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cCache.o ../../../../src/AgentCore/cCache.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cCache.o ../../../../src/AgentCore/cCache.cpp
 
 ${OBJECTDIR}/_ext/342587783/cProject.o: ../../../../src/AgentCore/cProject.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cProject.o ../../../../src/AgentCore/cProject.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cProject.o ../../../../src/AgentCore/cProject.cpp
 
 # Subprojects
 .build-subprojects:
