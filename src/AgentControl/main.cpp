@@ -12,22 +12,12 @@
 
 
 #include <cstdio>
-#include <stdlib.h>
-#include <glog/logging.h>
-#include "cProject.h"
-#include "common/ioSerialize.h"
+#include "cCmdHandler.h"
 
 
 int main(int argc, char **argv) {
-
-
-    // Initialize Google's logging library.
-    google::InitGoogleLogging(argv[0]);
-    google::ParseCommandLineFlags(&argc, &argv, false);
-
-    // ...
-    LOG(INFO) << "Found " << 3 << " cookies";
-
+    cCmdHandler cmd;
+    cmd.InitCommandLine(argc, argv);
 
     return 1;
 

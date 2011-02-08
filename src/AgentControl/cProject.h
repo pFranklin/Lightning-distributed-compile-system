@@ -14,9 +14,10 @@
 #ifndef cProject_h
 #define cProject_h
 
+#include <boost/serialization/list.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/vector.hpp>
-#include <boost/serialization/list.hpp>
+#include "common/cException.h"
 
 /* sSrcInfo
  * Building system one source file options.
@@ -26,10 +27,10 @@
  */
 
 struct sSrcInfo {
-    /** Source file name. */
-    std::string m_SrcFileName;
+    /** Source file name, important member. */
+    std::vector<std::string> m_SrcFileName;
 
-    /** All output file names. */
+    /** All output file names, important member. */
     std::vector<std::string> m_OutFileName;
 
     /** Source file entry function. */
@@ -38,29 +39,44 @@ struct sSrcInfo {
     /** Another options. */
     std::string m_Options;
 
-    /** Name of depends check module. */
+    /** Name of depends check module, important member. */
     std::string m_DependsCheckName;
 
-    /** Name of compiler. */
+    /** Name of compiler, important member. */
     std::string m_Compiler;
 
-    /** Name of Compiler command generator module. */
+    /** Name of Compiler command generator module, important member. */
     std::string m_CompilerCommand;
 
     /** Self macro. */
     std::vector<std::string> m_Macro;
 
-    /** Append or replace macro. */
-    bool m_AppendMacro;
-
     /** Self include path. */
     std::vector<std::string> m_Include;
 
-    /** Append or replace include. */
-    bool m_AppendInclude;
-
     /** Constructor of the struct. */
-    sSrcInfo();
+    sSrcInfo() {
+    }
+
+    /** Check important member. */
+    bool CheckMember() {
+        if (m_SrcFileName.size() == 0) {
+            throw cException("unknown input source file");
+        }
+        if (m_OutFileName.size() == 0) {
+            throw cException("unknown output obj file");
+        }
+        if (m_DependsCheckName.size() == 0) {
+            throw cException("unknown dependency check module");
+        }
+        if (m_Compiler.size() == 0) {
+            throw cException("unknown compiler");
+        }
+        if (m_CompilerCommand.size() == 0) {
+            throw cException("unknown compiler command generator");
+        }
+        return true;
+    }
 
 private:
     friend class boost::serialization::access;
@@ -75,9 +91,7 @@ private:
         ar & m_Compiler;
         ar & m_CompilerCommand;
         ar & m_Macro;
-        ar & m_AppendMacro;
         ar & m_Include;
-        ar & m_AppendInclude;
     }
 };
 
@@ -100,31 +114,16 @@ public:
     /** Reset all members. */
     void Reset();
 
-    /** Add global macro. */
-    void AddGlobalMacro(std::string &macro);
-
-    /** Add global global include. */
-    void AddGlobalInclude(std::string &includePath);
-
-    /** Add global macro by using const char*. */
-    void AddGlobalMacro(const char *macro);
-
-    /** Add global global include by using const char*. */
-    void AddGlobalInclude(const char *includePath);
-
     /** Add one source file. */
     void AddSourceFile(sSrcInfo &sourceFile);
 
     /** Set source file. */
     void SetSourceFile(unsigned int index, sSrcInfo &sourceFile);
 
+    /** Remove source file. */
+    void RemoveSourceFile(unsigned int index);
+
 protected:
-    /** Global macro.  */
-    std::vector<std::string> m_GlobalMacro;
-
-    /** Global include.  */
-    std::vector<std::string> m_GlobalInclude;
-
     /** All source files information.  */
     std::list<sSrcInfo> m_AllSrcInfo;
 
@@ -137,8 +136,6 @@ private:
 
     template<class Archive>
     void serialize(Archive & ar, const unsigned int version) {
-        ar & m_GlobalMacro;
-        ar & m_GlobalInclude;
         ar & m_AllSrcInfo;
     }
 };

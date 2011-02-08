@@ -6,7 +6,7 @@
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
       <logicalFolder name="f1"
-                     displayName="Common"
+                     displayName="common"
                      projectFiles="true"
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.h</itemPath>
@@ -28,7 +28,7 @@
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
       <logicalFolder name="f1"
-                     displayName="Common"
+                     displayName="common"
                      projectFiles="true"
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.cpp</itemPath>

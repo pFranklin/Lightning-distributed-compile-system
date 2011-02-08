@@ -17,12 +17,6 @@
 
 #include "cProject.h"
 
-//----------------------------------------------------------------------------
-
-sSrcInfo::sSrcInfo()
-: m_AppendMacro(false)
-, m_AppendInclude(false) {
-}
 
 //----------------------------------------------------------------------------
 
@@ -37,35 +31,7 @@ cProject::~cProject() {
 //----------------------------------------------------------------------------
 
 void cProject::Reset() {
-    m_GlobalMacro.clear();
-    m_GlobalInclude.clear();
     m_AllSrcInfo.clear();
-}
-
-//----------------------------------------------------------------------------
-
-void cProject::AddGlobalMacro(std::string &macro) {
-    m_GlobalMacro.push_back(macro);
-}
-
-//----------------------------------------------------------------------------
-
-void cProject::AddGlobalInclude(std::string &includePath) {
-    m_GlobalInclude.push_back(includePath);
-}
-
-//----------------------------------------------------------------------------
-
-void cProject::AddGlobalMacro(const char *macro) {
-    std::string sMacro(macro);
-    m_GlobalMacro.push_back(sMacro);
-}
-
-//----------------------------------------------------------------------------
-
-void cProject::AddGlobalInclude(const char *includePath) {
-    std::string sIncludePath(includePath);
-    m_GlobalInclude.push_back(sIncludePath);
 }
 
 //----------------------------------------------------------------------------
@@ -80,4 +46,15 @@ void cProject::SetSourceFile(unsigned int index, sSrcInfo &sourceFile) {
     std::list<sSrcInfo>::iterator itor = m_AllSrcInfo.begin();
     std::advance(itor, index);
     m_AllSrcInfo.insert(itor, sourceFile);
+}
+
+//----------------------------------------------------------------------------
+
+void cProject::RemoveSourceFile(unsigned int index) {
+    std::list<sSrcInfo>::iterator itor = m_AllSrcInfo.begin();
+    std::advance(itor, index);
+
+    if (itor != m_AllSrcInfo.end()) {
+        m_AllSrcInfo.erase(itor);
+    }
 }

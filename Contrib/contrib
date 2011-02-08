@@ -1,4 +1,8 @@
 boost
+boost threadpool
+google glog
+ibm icu
 hyperic sigar
 apache thrift
-boost threadpool
+libevent
+zlib
