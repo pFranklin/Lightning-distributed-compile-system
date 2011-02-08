@@ -10,10 +10,13 @@
                      projectFiles="true"
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.h</itemPath>
+        <itemPath>../../../../src/common/cException.h</itemPath>
         <itemPath>../../../../src/common/ioSerialize.h</itemPath>
+        <itemPath>../../../../src/common/version.h</itemPath>
       </logicalFolder>
-      <itemPath>../../../../src/AgentCore/cCache.h</itemPath>
-      <itemPath>../../../../src/AgentCore/cProject.h</itemPath>
+      <itemPath>../../../../src/AgentControl/cCache.h</itemPath>
+      <itemPath>../../../../src/AgentControl/cCmdHandler.h</itemPath>
+      <itemPath>../../../../src/AgentControl/cProject.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -30,9 +33,10 @@
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.cpp</itemPath>
       </logicalFolder>
-      <itemPath>../../../../src/AgentCore/cCache.cpp</itemPath>
-      <itemPath>../../../../src/AgentCore/cProject.cpp</itemPath>
-      <itemPath>../../../../src/AgentCore/main.cpp</itemPath>
+      <itemPath>../../../../src/AgentControl/cCache.cpp</itemPath>
+      <itemPath>../../../../src/AgentControl/cCmdHandler.cpp</itemPath>
+      <itemPath>../../../../src/AgentControl/cProject.cpp</itemPath>
+      <itemPath>../../../../src/AgentControl/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -58,7 +62,6 @@
         <ccTool>
           <incDir>
             <pElem>../../../../Contrib/boost_1_45_0</pElem>
-            <pElem>../../../../Contrib/gflags</pElem>
             <pElem>../../../../Contrib/glog</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
@@ -66,17 +69,16 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
-          <output>../../../../Bin/win32/AgentCore</output>
+          <output>../../../../Bin/win32/AgentControl</output>
           <linkerAddLib>
             <pElem>../../../../Contrib/LIBS/win32/boost</pElem>
-            <pElem>../../../../Contrib/LIBS/win32/gflags</pElem>
             <pElem>../../../../Contrib/LIBS/win32/glog</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_program_options</linkerLibLibItem>
             <linkerLibLibItem>boost_serialization</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
-            <linkerLibLibItem>gflags</linkerLibLibItem>
             <linkerLibLibItem>glog</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
@@ -109,18 +111,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
-          <output>../../../../Bin/win32/AgentCore</output>
+          <output>../../../../Bin/win32/AgentControl</output>
           <linkerAddLib>
             <pElem>../../../../Contrib/LIBS/win32/boost</pElem>
-            <pElem>../../../../Contrib/LIBS/win32/gflags</pElem>
             <pElem>../../../../Contrib/LIBS/win32/glog</pElem>
           </linkerAddLib>
           <stripSymbols>true</stripSymbols>
           <linkerLibItems>
             <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_program_options</linkerLibLibItem>
             <linkerLibLibItem>boost_serialization</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
-            <linkerLibLibItem>gflags</linkerLibLibItem>
             <linkerLibLibItem>glog</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>

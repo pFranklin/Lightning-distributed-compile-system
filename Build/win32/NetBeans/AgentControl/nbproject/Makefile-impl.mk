@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=AgentCore
+PROJECTNAME=AgentControl
 
 # Active Configuration
 DEFAULTCONF=Debug

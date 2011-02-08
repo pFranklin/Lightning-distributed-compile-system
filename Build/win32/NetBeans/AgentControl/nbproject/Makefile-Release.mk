@@ -33,10 +33,11 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/342587783/main.o \
+	${OBJECTDIR}/_ext/1193482173/main.o \
 	${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o \
-	${OBJECTDIR}/_ext/342587783/cCache.o \
-	${OBJECTDIR}/_ext/342587783/cProject.o
+	${OBJECTDIR}/_ext/1193482173/cProject.o \
+	${OBJECTDIR}/_ext/1193482173/cCache.o \
+	${OBJECTDIR}/_ext/1193482173/cCmdHandler.o
 
 
 # C Compiler Flags
@@ -53,35 +54,40 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -L../../../../Contrib/LIBS/win32/gflags -L../../../../Contrib/LIBS/win32/glog -lboost_filesystem -lboost_serialization -lboost_system -lgflags -lglog
+LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -L../../../../Contrib/LIBS/win32/glog -lboost_filesystem -lboost_program_options -lboost_serialization -lboost_system -lglog
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-Release.mk ../../../../Bin/win32/AgentCore.exe
+	"${MAKE}"  -f nbproject/Makefile-Release.mk ../../../../Bin/win32/AgentControl.exe
 
-../../../../Bin/win32/AgentCore.exe: ${OBJECTFILES}
+../../../../Bin/win32/AgentControl.exe: ${OBJECTFILES}
 	${MKDIR} -p ../../../../Bin/win32
-	${LINK.cc} -o ../../../../Bin/win32/AgentCore -s ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ../../../../Bin/win32/AgentControl -s ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/_ext/342587783/main.o: ../../../../src/AgentCore/main.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
+${OBJECTDIR}/_ext/1193482173/main.o: ../../../../src/AgentControl/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/main.o ../../../../src/AgentCore/main.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/main.o ../../../../src/AgentControl/main.cpp
 
 ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o: ../../../../src/common/BFS_UTF8_CODE.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/438060982
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
 
-${OBJECTDIR}/_ext/342587783/cCache.o: ../../../../src/AgentCore/cCache.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
+${OBJECTDIR}/_ext/1193482173/cProject.o: ../../../../src/AgentControl/cProject.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cCache.o ../../../../src/AgentCore/cCache.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cProject.o ../../../../src/AgentControl/cProject.cpp
 
-${OBJECTDIR}/_ext/342587783/cProject.o: ../../../../src/AgentCore/cProject.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/342587783
+${OBJECTDIR}/_ext/1193482173/cCache.o: ../../../../src/AgentControl/cCache.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/342587783/cProject.o ../../../../src/AgentCore/cProject.cpp
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cCache.o ../../../../src/AgentControl/cCache.cpp
+
+${OBJECTDIR}/_ext/1193482173/cCmdHandler.o: ../../../../src/AgentControl/cCmdHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cCmdHandler.o ../../../../src/AgentControl/cCmdHandler.cpp
 
 # Subprojects
 .build-subprojects:
@@ -89,7 +95,7 @@ ${OBJECTDIR}/_ext/342587783/cProject.o: ../../../../src/AgentCore/cProject.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r build/Release
-	${RM} ../../../../Bin/win32/AgentCore.exe
+	${RM} ../../../../Bin/win32/AgentControl.exe
 
 # Subprojects
 .clean-subprojects:

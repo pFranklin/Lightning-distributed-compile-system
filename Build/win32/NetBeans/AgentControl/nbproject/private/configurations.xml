@@ -8,12 +8,13 @@
       </gizmo_options>
       <runprofile version="6">
         <args></args>
-        <rundir></rundir>
+        <rundir>../../../../Bin/win32</rundir>
         <buildfirst>true</buildfirst>
         <console-type>0</console-type>
         <terminal-type>0</terminal-type>
         <remove-instrumentation>0</remove-instrumentation>
         <environment>
+          <variable name="GLOG_log_dir" value="./logs/"/>
         </environment>
       </runprofile>
     </conf>
@@ -22,12 +23,13 @@
       </gizmo_options>
       <runprofile version="6">
         <args></args>
-        <rundir></rundir>
+        <rundir>../../../../Bin/win32</rundir>
         <buildfirst>true</buildfirst>
         <console-type>0</console-type>
         <terminal-type>0</terminal-type>
         <remove-instrumentation>0</remove-instrumentation>
         <environment>
+          <variable name="GLOG_log_dir" value="./logs/"/>
         </environment>
       </runprofile>
     </conf>
