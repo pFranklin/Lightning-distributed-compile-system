@@ -14,9 +14,11 @@
         <itemPath>../../../../src/common/ioSerialize.h</itemPath>
         <itemPath>../../../../src/common/version.h</itemPath>
       </logicalFolder>
+      <itemPath>../../../../src/AgentControl/cBuildTree_tcl.h</itemPath>
       <itemPath>../../../../src/AgentControl/cCache.h</itemPath>
       <itemPath>../../../../src/AgentControl/cCmdHandler.h</itemPath>
       <itemPath>../../../../src/AgentControl/cProject.h</itemPath>
+      <itemPath>../../../../src/AgentControl/iBuildTree.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -33,6 +35,7 @@
                      kind="SOURCE_LOGICAL_FOLDER">
         <itemPath>../../../../src/common/BFS_UTF8_CODE.cpp</itemPath>
       </logicalFolder>
+      <itemPath>../../../../src/AgentControl/cBuildTree_tcl.cpp</itemPath>
       <itemPath>../../../../src/AgentControl/cCache.cpp</itemPath>
       <itemPath>../../../../src/AgentControl/cCmdHandler.cpp</itemPath>
       <itemPath>../../../../src/AgentControl/cProject.cpp</itemPath>
@@ -63,6 +66,7 @@
           <incDir>
             <pElem>../../../../Contrib/boost_1_45_0</pElem>
             <pElem>../../../../Contrib/glog</pElem>
+            <pElem>../../../../Contrib/tcl</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>
@@ -99,6 +103,7 @@
           <incDir>
             <pElem>../../../../Contrib/boost_1_45_0</pElem>
             <pElem>../../../../Contrib/glog</pElem>
+            <pElem>../../../../Contrib/tcl</pElem>
             <pElem>../../../../src</pElem>
           </incDir>
           <commandLine>-Wno-ignored-qualifiers</commandLine>

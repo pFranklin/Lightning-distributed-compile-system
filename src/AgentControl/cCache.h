@@ -52,7 +52,7 @@ protected:
     /** Source file last write time. */
     std::time_t m_SrcLastWriteTime;
 
-    /** Depneds filef name. */
+    /** Depneds file name. */
     std::map<std::string, std::time_t> m_DependsInfo;
 
     /** Options crc. */

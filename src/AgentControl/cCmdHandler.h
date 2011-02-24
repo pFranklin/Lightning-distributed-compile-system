@@ -55,6 +55,9 @@ private:
     /** Handle remove source file operation.  */
     void OpcodeHandleRemoveSource();
 
+    /** Handle view project struct.  */
+    void OpcodeHandleViewProject();
+
     /** Handle the building task.  */
     void OpcodeHandleBuild();
 

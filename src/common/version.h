@@ -14,7 +14,7 @@
 #define LIGHTNING_VERSION_H
 
 
-#define LIGHTNING_VERSION "1_0"
+#define LIGHTNING_VERSION "v1.0"
 
 #endif
 

@@ -37,6 +37,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o \
 	${OBJECTDIR}/_ext/1193482173/cProject.o \
 	${OBJECTDIR}/_ext/1193482173/cCache.o \
+	${OBJECTDIR}/_ext/1193482173/cBuildTree_tcl.o \
 	${OBJECTDIR}/_ext/1193482173/cCmdHandler.o
 
 
@@ -67,27 +68,32 @@ LDLIBSOPTIONS=-L../../../../Contrib/LIBS/win32/boost -L../../../../Contrib/LIBS/
 ${OBJECTDIR}/_ext/1193482173/main.o: ../../../../src/AgentControl/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/main.o ../../../../src/AgentControl/main.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../Contrib/tcl -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/main.o ../../../../src/AgentControl/main.cpp
 
 ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o: ../../../../src/common/BFS_UTF8_CODE.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/438060982
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../Contrib/tcl -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/438060982/BFS_UTF8_CODE.o ../../../../src/common/BFS_UTF8_CODE.cpp
 
 ${OBJECTDIR}/_ext/1193482173/cProject.o: ../../../../src/AgentControl/cProject.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cProject.o ../../../../src/AgentControl/cProject.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../Contrib/tcl -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cProject.o ../../../../src/AgentControl/cProject.cpp
 
 ${OBJECTDIR}/_ext/1193482173/cCache.o: ../../../../src/AgentControl/cCache.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cCache.o ../../../../src/AgentControl/cCache.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../Contrib/tcl -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cCache.o ../../../../src/AgentControl/cCache.cpp
+
+${OBJECTDIR}/_ext/1193482173/cBuildTree_tcl.o: ../../../../src/AgentControl/cBuildTree_tcl.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../Contrib/tcl -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cBuildTree_tcl.o ../../../../src/AgentControl/cBuildTree_tcl.cpp
 
 ${OBJECTDIR}/_ext/1193482173/cCmdHandler.o: ../../../../src/AgentControl/cCmdHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1193482173
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cCmdHandler.o ../../../../src/AgentControl/cCmdHandler.cpp
+	$(COMPILE.cc) -g -Wall -I../../../../Contrib/boost_1_45_0 -I../../../../Contrib/glog -I../../../../Contrib/tcl -I../../../../src -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1193482173/cCmdHandler.o ../../../../src/AgentControl/cCmdHandler.cpp
 
 # Subprojects
 .build-subprojects:

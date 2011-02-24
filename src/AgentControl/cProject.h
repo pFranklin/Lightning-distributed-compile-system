@@ -59,24 +59,14 @@ struct sSrcInfo {
     }
 
     /** Check important member. */
-    bool CheckMember() {
-        if (m_SrcFileName.size() == 0) {
-            throw cException("unknown input source file");
-        }
-        if (m_OutFileName.size() == 0) {
-            throw cException("unknown output obj file");
-        }
-        if (m_DependsCheckName.size() == 0) {
-            throw cException("unknown dependency check module");
-        }
-        if (m_Compiler.size() == 0) {
-            throw cException("unknown compiler");
-        }
-        if (m_CompilerCommand.size() == 0) {
-            throw cException("unknown compiler command generator");
-        }
-        return true;
-    }
+    bool CheckMember();
+
+    /** View the src info. */
+    void ViewInfo();
+
+protected:
+    /** View the string in vector. */
+    void ViewVecStr(const char *desc, std::vector<std::string> &vecStr);
 
 private:
     friend class boost::serialization::access;
@@ -122,6 +112,9 @@ public:
 
     /** Remove source file. */
     void RemoveSourceFile(unsigned int index);
+
+    /** View the project file info. */
+    void ViewInfo();
 
 protected:
     /** All source files information.  */

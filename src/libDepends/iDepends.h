@@ -31,7 +31,7 @@ struct sDependsInfo {
     const char *FileAbsPath;
 
     /** File relative path which will be contained in
-     *  tar file stream, can include './' or '../' .  */
+     *  zip file stream, can include './' or '../' .  */
     const char *FileRelativePath;
 
     /** File data for preprocessed file stream.  */

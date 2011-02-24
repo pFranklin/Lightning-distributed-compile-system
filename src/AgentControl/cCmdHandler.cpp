@@ -52,12 +52,15 @@ void cCmdHandler::InitCommandLine(int argc, char **argv) {
         LOG(ERROR) << e.what();
     }
 
-    if (m_VarMap.count("help")) {
+    // print help information
+    if (m_VarMap.count("help") || m_VarMap.size() == 1) {
         cout << m_Cmdline_Options << endl;
-    } else if (m_VarMap.count("version")) {
-        cout << "Lightning distributed building system "
+    }// print version information
+    else if (m_VarMap.count("version")) {
+        cout << endl << "Lightning distributed building system "
                 << LIGHTNING_VERSION << endl;
-    } else if (m_Operator.find(m_Opcode) != m_Operator.end()) {
+    }// operator the project
+    else if (m_Operator.count(m_Opcode)) {
         m_Operator[m_Opcode](this);
     }
 }
@@ -82,7 +85,7 @@ void cCmdHandler::RegisterCommandLine() {
             "source code enctry function name")
             ("options", po::value<string > (&m_SrcFileInfo.m_Options),
             "compile options")
-            ("depend-module", po::value<string > (&m_SrcFileInfo.m_DependsCheckName),
+            ("dependency-module", po::value<string > (&m_SrcFileInfo.m_DependsCheckName),
             "depends check module name")
             ("compiler", po::value<string > (&m_SrcFileInfo.m_Compiler),
             "compiler name")
@@ -111,6 +114,7 @@ void cCmdHandler::RegisterCommandLine() {
 void cCmdHandler::InitOpcodeHandler() {
     m_Operator["set_source"] = boost::bind(&cCmdHandler::OpcodeHandleSetSource, this);
     m_Operator["remove_source"] = boost::bind(&cCmdHandler::OpcodeHandleRemoveSource, this);
+    m_Operator["view_project"] = boost::bind(&cCmdHandler::OpcodeHandleViewProject, this);
     m_Operator["build"] = boost::bind(&cCmdHandler::OpcodeHandleBuild, this);
 }
 
@@ -127,8 +131,7 @@ void cCmdHandler::OpcodeHandleProject(bool bRemove) {
             // remove source file
             if (bRemove == true) {
                 project.RemoveSourceFile(m_SrcIndex);
-            }
-            // set source file
+            }// set source file
             else {
                 // append the src file to the end of project
                 if (m_SrcIndex == -1) {
@@ -156,6 +159,16 @@ void cCmdHandler::OpcodeHandleSetSource() {
 
 void cCmdHandler::OpcodeHandleRemoveSource() {
     OpcodeHandleProject(true);
+}
+
+//----------------------------------------------------------------------------
+
+void cCmdHandler::OpcodeHandleViewProject() {
+    // import project
+    cProject project;
+    ioSerialize::Input(project, m_ProjectFile.c_str());
+
+    project.ViewInfo();
 }
 
 //----------------------------------------------------------------------------
